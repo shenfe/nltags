@@ -4,10 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="../dist/tagger.js"></script>
+    <title>Tagger</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #log {
+            max-height: 400px;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="app">
+        <div class="container m-3 mx-auto">
+            <select id="type" class="form-control mb-3">
+                <option value="pos">词性标注</option>
+                <option value="dp">依存句法</option>
+                <option value="sdp">语义依存</option>
+            </select>
+            <div class="input-group mb-3">
+                <input id="input" type="text" class="form-control" placeholder="输入文本" aria-label="输入文本" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="search">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="container m-3 mx-auto form-group">
+            <textarea class="form-control" id="value" rows="3"></textarea>
+        </div>
+        <div class="container m-3 mx-auto clearfix">
+            <button type="button" id="commit" class="btn btn-primary float-right">Commit</button>
+        </div>
+        <div class="container m-3 mx-auto">
+            <div class="card">
+                <div id="log" class="container card-body">
+                    /* logging */
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="../dist/tagger.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {}
+        });
+    </script>
 </body>
 </html>
