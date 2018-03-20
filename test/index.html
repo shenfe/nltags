@@ -11,28 +11,31 @@
             max-height: 400px;
             overflow: auto;
         }
+        select {
+            text-indent: 0.25em;
+        }
     </style>
 </head>
 <body>
-    <div class="app">
+    <div id="app">
         <div class="container m-3 mx-auto">
-            <select id="type" class="form-control mb-3">
+            <select id="type" class="form-control mb-3" v-model="type">
                 <option value="pos">词性标注</option>
                 <option value="dp">依存句法</option>
                 <option value="sdp">语义依存</option>
             </select>
             <div class="input-group mb-3">
-                <input id="input" type="text" class="form-control" placeholder="输入文本" aria-label="输入文本" aria-describedby="basic-addon2">
+                <input v-model="id" id="input" type="text" class="form-control" placeholder="输入文本" aria-label="输入文本" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="search">Search</button>
+                    <button class="btn btn-outline-secondary" type="button" id="search" v-on:click="search()">Search</button>
                 </div>
             </div>
         </div>
         <div class="container m-3 mx-auto form-group">
-            <textarea class="form-control" id="value" rows="3"></textarea>
+            <textarea class="form-control" id="value" rows="3" placeholder="输入赋值" v-model="value"></textarea>
         </div>
         <div class="container m-3 mx-auto clearfix">
-            <button type="button" id="commit" class="btn btn-primary float-right">Commit</button>
+            <button type="button" id="commit" class="btn btn-primary float-right" v-on:click="commit()">Commit</button>
         </div>
         <div class="container m-3 mx-auto">
             <div class="card">
@@ -43,11 +46,59 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="../dist/tagger.js"></script>
+    <script src="//127.0.0.1:3000/tagger.js"></script>
     <script>
+        const apiUrl = '//127.0.0.1:3000';
         const app = new Vue({
             el: '#app',
-            data: {}
+            data: {
+                type: 'pos',
+                id: '',
+                value: '{}'
+            },
+            computed: {
+                _rev() {
+                    return JSON.parse(this.value)._rev
+                }
+            },
+            methods: {
+                search: async function () {
+                    const doc = await fetch(`${apiUrl}/get?type=${this.type}&_id=${this.id}`)
+                        .then(res => res.json())
+                        .catch(err => {
+                            log(`get failed: ${err}`);
+                            return {};
+                        });
+                    this.value = JSON.stringify(doc, null, 4);
+                },
+                commit: async function () {
+                    const doc = await fetch(`${apiUrl}/put`, fetchPostWrap({
+                        ...JSON.parse(this.value),
+                        _rev: this._rev
+                    }))
+                        .then(res => res.json())
+                        .then(_ => log('put successfully'))
+                        .catch(err => log(`put failed: ${err}`));
+                }
+            }
+        });
+        const log = info => {
+            const $log = document.querySelector('#log');
+            const div = document.createElement('div');
+            div.innerText = info;
+            $log.appendChild(div);
+            setTimeout(() => {
+                $log.scrollTop = $log.scrollHeight - $log.clientHeight;
+            });
+        };
+        const fetchPostWrap = data => ({
+            method: 'post',
+            mode: 'cors',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
         });
     </script>
 </body>

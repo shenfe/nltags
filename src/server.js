@@ -27,24 +27,35 @@ module.exports = function main(options = {}) {
         ensureDir(dbPath);
     }
     const db = require('./dao');
-    db.open(dbPath);
+    db.open(dbPath, {
+        type: 'pos'
+    });
 
     app.keys = ['some secret for tagger server'];
 
-    router.post('/greet', async function (ctx, next) {
+    router.get(`/get`, async function (ctx, next) {
+        console.log('request query', ctx.request.query);
+        ctx.response.header['Access-Control-Allow-Origin'] = ctx.request.origin;
+        ctx.response.header['Content-Type'] = 'application/json; charset=utf-8';
+        // console.log('response header', ctx.response.header);
+        ctx.status = 200;
+        ctx.body = await db.get(ctx.request.query);
+        await next();
+    });
+
+    router.post(`/put`, async function (ctx, next) {
         console.log('request body', ctx.request.body);
         ctx.response.header['Access-Control-Allow-Origin'] = ctx.request.origin;
         ctx.response.header['Content-Type'] = 'application/json; charset=utf-8';
-        console.log('response header', ctx.response.header);
+        // console.log('response header', ctx.response.header);
         ctx.status = 200;
-        ctx.body = {
-            msg: 'hello'
-        };
+        ctx.body = await db.put(ctx.request.body);
         await next();
     });
 
     app
         .use(serve(path.resolve(__dirname, 'static')))
+        .use(serve(path.resolve(__dirname, '../dist')))
         .use(cors({
             // origin: '*',
             credentials: true
