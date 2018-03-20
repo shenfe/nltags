@@ -1,0 +1,77 @@
+{
+    "SBV": {
+        "name": "主谓关系",
+        "explanation": "subject-verb",
+        "example": "我送她一束花 (我 <-- 送)"
+    },
+    "VOB": {
+        "name": "动宾关系",
+        "explanation": "直接宾语，verb-object",
+        "example": "我送她一束花 (送 --> 花)"
+    },
+    "IOB": {
+        "name": "间宾关系",
+        "explanation": "间接宾语，indirect-object",
+        "example": "我送她一束花 (送 --> 她)"
+    },
+    "FOB": {
+        "name": "前置宾语",
+        "explanation": "前置宾语，fronting-object",
+        "example": "他什么书都读 (书 <-- 读)"
+    },
+    "DBL": {
+        "name": "兼语",
+        "explanation": "double",
+        "example": "他请我吃饭 (请 --> 我)"
+    },
+    "ATT": {
+        "name": "定中关系",
+        "explanation": "attribute",
+        "example": "红苹果 (红 <-- 苹果)"
+    },
+    "ADV": {
+        "name": "状中结构",
+        "explanation": "adverbial",
+        "example": "非常美丽 (非常 <-- 美丽)"
+    },
+    "CMP": {
+        "name": "动补结构",
+        "explanation": "complement",
+        "example": "做完了作业 (做 --> 完)"
+    },
+    "COO": {
+        "name": "并列关系",
+        "explanation": "coordinate",
+        "example": "大山和大海 (大山 --> 大海)"
+    },
+    "POB": {
+        "name": "介宾关系",
+        "explanation": "preposition-object",
+        "example": "在贸易区内 (在 --> 内)"
+    },
+    "LAD": {
+        "name": "左附加关系",
+        "explanation": "left adjunct",
+        "example": "大山和大海 (和 <-- 大海)"
+    },
+    "RAD": {
+        "name": "右附加关系",
+        "explanation": "right adjunct",
+        "example": "孩子们 (孩子 --> 们)"
+    },
+    "IS": {
+        "name": "独立结构",
+        "explanation": "independent structure",
+        "example": "两个单句在结构上彼此独立"
+    },
+    "WP": {
+        "name": "标点",
+        "explanation": "punctuation",
+        "example": "。"
+    },
+    "HED": {
+        "name": "核心关系",
+        "explanation": "head",
+        "example": "指整个句子的核心"
+    }
+}

@@ -1,0 +1,355 @@
+{
+    "Agt": {
+        "name": "施事关系",
+        "explanation": "Agent",
+        "example": "我送她一束花 (我 <-- 送)"
+    },
+    "Exp": {
+        "name": "当事关系",
+        "explanation": "Experiencer",
+        "example": "我跑得快 (跑 --> 我)"
+    },
+    "Aft": {
+        "name": "感事关系",
+        "explanation": "Affection",
+        "example": "我思念家乡 (思念 --> 我)"
+    },
+    "Poss": {
+        "name": "领事关系",
+        "explanation": "Possessor",
+        "example": "他有一本好书 (他 <-- 有)"
+    },
+    "Pat": {
+        "name": "受事关系",
+        "explanation": "Patient",
+        "example": "他打了小明 (打 --> 小明)"
+    },
+    "Cont": {
+        "name": "客事关系",
+        "explanation": "Content",
+        "example": "他听到鞭炮声 (听 --> 鞭炮声)"
+    },
+    "Prod": {
+        "name": "成事关系",
+        "explanation": "Product",
+        "example": "他写了本小说 (写 --> 小说)"
+    },
+    "Orig": {
+        "name": "源事关系",
+        "explanation": "Origin",
+        "example": "我军缴获敌人四辆坦克 (缴获 --> 坦克)"
+    },
+    "Datv": {
+        "name": "涉事关系",
+        "explanation": "Dative",
+        "example": "他告诉我个秘密 (告诉 --> 我)"
+    },
+    "Comp": {
+        "name": "比较角色",
+        "explanation": "Comitative",
+        "example": "他成绩比我好 (他 --> 我)"
+    },
+    "Belg": {
+        "name": "属事角色",
+        "explanation": "Belongings",
+        "example": "老赵有俩女儿 (老赵 <-- 有)"
+    },
+    "Clas": {
+        "name": "类事角色",
+        "explanation": "Classification",
+        "example": "他是中学生 (是 --> 中学生)"
+    },
+    "Accd": {
+        "name": "依据角色",
+        "explanation": "According",
+        "example": "本庭依法宣判 (依法 <-- 宣判)"
+    },
+    "Reas": {
+        "name": "缘故角色",
+        "explanation": "Reason",
+        "example": "他在愁女儿婚事 (愁 --> 婚事)"
+    },
+    "Int": {
+        "name": "意图角色",
+        "explanation": "Intention",
+        "example": "为了金牌他拼命努力 (金牌 <-- 努力)"
+    },
+    "Cons": {
+        "name": "结局角色",
+        "explanation": "Consequence",
+        "example": "他跑了满头大汗 (跑 --> 满头大汗)"
+    },
+    "Mann": {
+        "name": "方式角色",
+        "explanation": "Manner",
+        "example": "球慢慢滚进空门 (慢慢 <-- 滚)"
+    },
+    "Tool": {
+        "name": "工具角色",
+        "explanation": "Tool",
+        "example": "她用砂锅熬粥 (砂锅 <-- 熬粥)"
+    },
+    "Malt": {
+        "name": "材料角色",
+        "explanation": "Material",
+        "example": "她用小米熬粥 (小米 <-- 熬粥)"
+    },
+    "Time": {
+        "name": "时间角色",
+        "explanation": "Time",
+        "example": "唐朝有个李白 (唐朝 <-- 有)"
+    },
+    "Loc": {
+        "name": "空间角色",
+        "explanation": "Location",
+        "example": "这房子朝南 (朝 --> 南)"
+    },
+    "Proc": {
+        "name": "历程角色",
+        "explanation": "Process",
+        "example": "火车正在过长江大桥 (过 --> 大桥)"
+    },
+    "Dir": {
+        "name": "趋向角色",
+        "explanation": "Direction",
+        "example": "部队奔向南方 (奔 --> 南)"
+    },
+    "Sco": {
+        "name": "范围角色",
+        "explanation": "Scope",
+        "example": "产品应该比质量 (比 --> 质量)"
+    },
+    "Quan": {
+        "name": "数量角色",
+        "explanation": "Quantity",
+        "example": "一年有365天 (有 --> 天)"
+    },
+    "Qp": {
+        "name": "数量数组",
+        "explanation": "Quantity-phrase",
+        "example": "三本书 (三 --> 本)"
+    },
+    "Freq": {
+        "name": "频率角色",
+        "explanation": "Frequency",
+        "example": "他每天看书 (每天 <-- 看)"
+    },
+    "Seq": {
+        "name": "顺序角色",
+        "explanation": "Sequence",
+        "example": "他跑第一 (跑 --> 第一)"
+    },
+    "Desc (Feat)": {
+        "name": "描写角色",
+        "explanation":"Description",
+        "example": "他长得胖 (长 --> 胖)"
+    },
+    "Host": {
+        "name": "宿主角色",
+        "explanation": "Host",
+        "example": "住房面积 (住房 <-- 面积)"
+    },
+    "Nmod": {
+        "name": "名字修饰角色",
+        "explanation": "Name-modifier",
+        "example": "果戈里大街 (果戈里 <-- 大街)"
+    },
+    "Tmod": {
+        "name": "时间修饰角色",
+        "explanation": "Time-modifier",
+        "example": "星期一上午 (星期一 <-- 上午)"
+    },
+    "r + main role": {
+        "name": "反角色",
+        "explanation": "",
+        "example": "打篮球的小姑娘 (打篮球 <-- 姑娘)"
+    },
+    "d + main role": {
+        "name": "嵌套角色",
+        "explanation": "",
+        "example": "爷爷看见孙子在跑 (看见 --> 跑)"
+    },
+    "eCoo": {
+        "name": "并列关系",
+        "explanation": "event Coordination",
+        "example": "我喜欢唱歌和跳舞 (唱歌 --> 跳舞)"
+    },
+    "eSelt": {
+        "name": "选择关系",
+        "explanation": "event Selection",
+        "example": "您是喝茶还是喝咖啡 (茶 --> 咖啡)"
+    },
+    "eEqu": {
+        "name": "等同关系",
+        "explanation": "event Equivalent",
+        "example": "他们三个人一起走 (他们 --> 三个人)"
+    },
+    "ePrec": {
+        "name": "先行关系",
+        "explanation": "event Precedent",
+        "example": "首先，先"
+    },
+    "eSucc": {
+        "name": "顺承关系",
+        "explanation": "event Successor",
+        "example": "随后，然后"
+    },
+    "eProg": {
+        "name": "递进关系",
+        "explanation": "event Progression",
+        "example": "况且，并且"
+    },
+    "eAdvt": {
+        "name": "转折关系",
+        "explanation": "event adversative",
+        "example": "却，然而"
+    },
+    "eCau": {
+        "name": "原因关系",
+        "explanation": "event Cause",
+        "example": "因为，既然"
+    },
+    "eResu": {
+        "name": "结果关系",
+        "explanation": "event Result",
+        "example": "因此，以致"
+    },
+    "eInf": {
+        "name": "推论关系",
+        "explanation": "event Inference",
+        "example": "才，则"
+    },
+    "eCond": {
+        "name": "条件关系",
+        "explanation": "event Condition",
+        "example": "只要，除非"
+    },
+    "eSupp": {
+        "name": "假设关系",
+        "explanation": "event Supposition",
+        "example": "如果，要是"
+    },
+    "eConc": {
+        "name": "让步关系",
+        "explanation": "event Concession",
+        "example": "纵使，哪怕"
+    },
+    "eMetd": {
+        "name": "手段关系",
+        "explanation": "event Method"
+    },
+    "ePurp": {
+        "name": "目的关系",
+        "explanation": "event Purpose",
+        "example": "为了，以便"
+    },
+    "eAban": {
+        "name": "割舍关系",
+        "explanation": "event Abandonment",
+        "example": "与其，也不"
+    },
+    "ePref": {
+        "name": "选取关系",
+        "explanation": "event Preference",
+        "example": "不如，宁愿"
+    },
+    "eSum": {
+        "name": "总括关系",
+        "explanation": "event Summary",
+        "example": "总而言之"
+    },
+    "eRect": {
+        "name": "分叙关系",
+        "explanation": "event Recount",
+        "example": "例如，比方说"
+    },
+    "mConj": {
+        "name": "连词标记",
+        "explanation": "Recount Marker",
+        "example": "和，或"
+    },
+    "mAux": {
+        "name": "的字标记",
+        "explanation": "Auxiliary",
+        "example": "的，地，得"
+    },
+    "mPrep": {
+        "name": "介词标记",
+        "explanation": "Preposition",
+        "example": "把，被"
+    },
+    "mTone": {
+        "name": "语气标记",
+        "explanation": "Tone",
+        "example": "吗，呢"
+    },
+    "mTime": {
+        "name": "时间标记",
+        "explanation": "Time",
+        "example": "才，曾经"
+    },
+    "mRang": {
+        "name": "范围标记",
+        "explanation": "Range",
+        "example": "都，到处"
+    },
+    "mDegr": {
+        "name": "程度标记",
+        "explanation": "Degree",
+        "example": "很，稍微"
+    },
+    "mFreq": {
+        "name": "频率标记",
+        "explanation": "Frequency Marker",
+        "example": "再，常常"
+    },
+    "mDir": {
+        "name": "趋向标记",
+        "explanation": "Direction Marker",
+        "example": "上去，下来"
+    },
+    "mPars": {
+        "name": "插入语标记",
+        "explanation": "Parenthesis Marker",
+        "example": "总的来说，众所周知"
+    },
+    "mNeg": {
+        "name": "否定标记",
+        "explanation": "Negation Marker",
+        "example": "不，没，未"
+    },
+    "mMod": {
+        "name": "情态标记",
+        "explanation": "Modal Marker",
+        "example": "幸亏，会，能"
+    },
+    "mPunc": {
+        "name": "标点标记",
+        "explanation": "Punctuation Marker",
+        "example": "，。！"
+    },
+    "mPept": {
+        "name": "重复标记",
+        "explanation": "Repetition Marker",
+        "example": "走啊走 (走 --> 走)"
+    },
+    "mMaj": {
+        "name": "多数标记",
+        "explanation": "Majority Marker",
+        "example": "们，等"
+    },
+    "mVain": {
+        "name": "实词虚化标记",
+        "explanation": "Vain Marker"
+    },
+    "mSepa": {
+        "name": "离合标记",
+        "explanation": "Seperation Marker",
+        "example": "吃了个饭 (吃 --> 饭) 洗了个澡 (洗 --> 澡)"
+    },
+    "Root": {
+        "name": "根节点",
+        "explanation": "Root",
+        "example": "全句核心节点"
+    }
+}

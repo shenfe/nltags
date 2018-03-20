@@ -2,7 +2,8 @@
   "main": "src/server.js",
   "scripts": {
     "build": "webpack",
-    "test": "http-server ./test -p 3001 -s && node ./test/serve.js"
+    "test:serve": "http-server ./test -p 3001",
+    "test": "node ./test/serve.js"
   },
   "dependencies": {
     "@koa/cors": "^2.2.1",
@@ -11,10 +12,12 @@
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2",
-    "pouchdb": "^6.4.3"
+    "pouchdb": "^6.4.3",
+    "pouchdb-find": "^6.4.3"
   },
   "devDependencies": {
     "http-server": "^0.11.1",
-    "opener": "^1.4.3"
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
   }
 }

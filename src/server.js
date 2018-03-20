@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const http = require('http');
 
 const Koa = require('koa');
 const Router = require('koa-router');
@@ -20,9 +21,13 @@ module.exports = function main(options = {}) {
     const app = new Koa();
     const router = new Router();
 
-    ensureDir(path.resolve(__dirname, conf.dbPath));
+    let dbPath = conf.dbPath;
+    if (!dbPath.startsWith('http://') && !dbPath.startsWith('https://')) {
+        dbPath = path.resolve(process.cwd(), dbPath);
+        ensureDir(dbPath);
+    }
     const db = require('./dao');
-    db.open(conf.dbPath);
+    db.open(dbPath);
 
     app.keys = ['some secret for tagger server'];
 
