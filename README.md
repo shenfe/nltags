@@ -2,7 +2,9 @@
 
 A service for labeling in POS and DP.
 
-## POS
+## Data Structure
+
+### POS
 
 Example:
 
@@ -39,7 +41,7 @@ Example:
 }
 ```
 
-## DP
+### DP
 
 Example:
 
@@ -66,7 +68,7 @@ Example:
 }
 ```
 
-## SDP
+### SDP
 
 Example:
 
@@ -92,6 +94,11 @@ Example:
     ]
 }
 ```
+
+## Storage
+
+* CouchDB
+* PouchDB
 
 ## License
 
