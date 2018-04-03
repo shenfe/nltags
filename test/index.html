@@ -46,7 +46,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="//127.0.0.1:3000/tagger.js"></script>
+    <!-- <script src="//127.0.0.1:3000/tagger.js"></script> -->
     <script>
         const apiUrl = '//127.0.0.1:3000';
         const app = new Vue({
@@ -59,6 +59,19 @@
             computed: {
                 _rev() {
                     return JSON.parse(this.value)._rev
+                }
+            },
+            watch: {
+                type: function (v) {
+                    fetch(`${apiUrl}/${v}.json`, {
+                        mode: 'cors',
+                        credentials: 'include'
+                    })
+                        .then(res => res.json())
+                        .then(data => log(JSON.stringify(data, null, 4), 1))
+                        .catch(err => {
+                            log(`get failed: ${err}`);
+                        });
                 }
             },
             methods: {
@@ -82,23 +95,28 @@
                 }
             }
         });
-        const log = info => {
+        const log = (info, option) => {
             const $log = document.querySelector('#log');
             const div = document.createElement('div');
-            div.innerText = info;
+            if (option === 1) {
+                div.innerHTML = `<pre>${info}</pre>`;
+            } else {
+                div.innerHTML = info;
+            }
             $log.appendChild(div);
             setTimeout(() => {
                 $log.scrollTop = $log.scrollHeight - $log.clientHeight;
             });
         };
-        const fetchPostWrap = data => ({
+        const fetchPostWrap = (data, options = {}) => ({
             method: 'post',
             mode: 'cors',
             credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            ...options
         });
     </script>
 </body>

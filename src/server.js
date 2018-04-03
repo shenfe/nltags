@@ -54,12 +54,12 @@ module.exports = function main(options = {}) {
     });
 
     app
-        .use(serve(path.resolve(__dirname, 'static')))
-        .use(serve(path.resolve(__dirname, '../dist')))
         .use(cors({
             // origin: '*',
             credentials: true
         }))
+        .use(serve(path.resolve(__dirname, 'static')))
+        .use(serve(path.resolve(__dirname, '../dist')))
         .use(bodyParser())
         .use(router.routes())
         .use(router.allowedMethods())

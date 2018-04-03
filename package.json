@@ -1,7 +1,7 @@
 {
   "main": "src/server.js",
   "scripts": {
-    "build": "webpack",
+    "build": "rollup --config rollup.config.js",
     "test:serve": "http-server ./test -p 3001",
     "test": "node ./test/serve.js"
   },
@@ -17,7 +17,8 @@
   },
   "devDependencies": {
     "http-server": "^0.11.1",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12"
+    "rollup": "^0.57.1",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0"
   }
 }
