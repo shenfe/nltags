@@ -97,7 +97,7 @@ Example:
 
 ## Storage
 
-* CouchDB
+* CouchDB (Master)
 * PouchDB
 
 ## License
